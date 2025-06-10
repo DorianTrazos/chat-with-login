@@ -20,7 +20,7 @@ io.on('connection', client => {
     console.log(data);
 
     io.emit('server-message', { id: v4(), user: data.user, text: data.message });
-    io.emit('server-message', { id: v4(), user: data.user, text: data.message + 123 });
+    // io.emit('server-message', { id: v4(), user: data.user, text: data.message + 123 }); Con esta línea provoco el fallo de actualización de mensajes
   });
 
   console.log(`✅ Usuario conectado: ${client.id}`);
