@@ -20,6 +20,7 @@ io.on('connection', client => {
     console.log(data);
 
     io.emit('server-message', { id: v4(), user: data.user, text: data.message });
+    io.emit('server-message', { id: v4(), user: data.user, text: data.message + 123 });
   });
 
   console.log(`✅ Usuario conectado: ${client.id}`);

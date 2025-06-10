@@ -11,8 +11,15 @@ const Chat = () => {
 
 	useEffect(() => {
 		socket.on('server-message', data => {
+			console.log('New message received:', data);
+
 			const updatedMessages = [...messages, data];
 			setMessages(updatedMessages);
+
+			//Si llegan dos mensajes muy rápidos, esto fallará
+			// La solución ideal es utilizar un reducer, la otra solución es utilizar la sintaxis de función de setMessages(prev => [...prev, data]); Explicar mañana
+
+			// setMessages(prevData => [...prevData, data]);
 		});
 
 		return () => socket.off('server-message');
