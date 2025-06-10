@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from '../../pages/Home';
+
 import Chat from '../../pages/chat/Chat';
+import Home from '../../pages/home/Home';
 
 const Router = () => {
 	return (

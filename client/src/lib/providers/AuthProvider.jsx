@@ -7,8 +7,6 @@ const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 
-	console.log('Loading', loading);
-
 	useEffect(() => {
 		const unsuscribe = auth.onAuthStateChanged(user => {
 			setLoading(true);
